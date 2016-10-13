@@ -1,0 +1,159 @@
+body {
+	background-color: #383838; 
+	font-family:courier;
+}
+
+#picframe {
+	position:relative;
+	bottom: 90px;
+}
+
+#content {
+	position: relative; 
+	background-color: #D8E4FF; 
+	width: 700px; 
+	height: 415px; 
+	margin-top: 90px;
+	margin-left:600px;
+}
+
+#picture1 {
+	position: absolute; 
+	width: 415px; 
+	margin-top: 90px; 
+	margin-left: 45px;
+}
+
+#picture2 {
+	position: absolute; 
+	width: 100px; 
+	margin-top: 90px; 
+	margin-left: 480px;
+}
+
+#picture3 {
+	position: absolute; 
+	width: 100px; 
+	margin-top: 195px; 
+	margin-left: 480px;
+}
+
+#picture4 {
+	position: absolute; 
+	width: 100px; 
+	margin-top: 300px; 
+	margin-left: 480px;
+}
+
+#picture5 {
+	position: absolute; 
+	width: 100px; 
+	margin-top: 405px; 
+	margin-left: 480px;
+}
+
+
+#container {
+	position: absolute; 
+	background-color: #D8E4FF; 
+	width: 700px; 
+	height: 415px; 
+	margin-top: 90px; 
+	margin-left:600px;
+
+}
+#name {
+	position: absolute; 
+	margin-top: 10px; 
+	margin-left: 30px; 
+	color: #00526B;
+}
+
+#nickname {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: 40px; 
+	color: #00526B;
+}
+
+#hobbies {
+	position: absolute; 
+	margin-top: 80px; 
+	margin-left: 50px; 
+	color: #00526B;
+}
+
+#hobbies2 {
+	position: absolute; 
+	margin-top: 110px; 
+	margin-left: 60px; 
+	color: #00526B;
+}
+
+#hobbies3 {
+	position: absolute; 
+	margin-top: 140px; 
+	margin-left: 60px; 
+	color: #00526B;
+}
+
+#interest {
+	position: absolute; 
+	margin-top: 170px; 
+	margin-left: 50px; 
+	color: #00526B;
+}
+
+#interest2 {
+	position: absolute; 
+	margin-top: 200px;
+	margin-left: 60px; 
+	color: #00526B;
+}
+
+#interest3 {
+	position: absolute; 
+	margin-top: 230px; 
+	margin-left: 60px; color: #00526B;
+}
+
+#facebook {
+	position: absolute; 
+	left: 600px; 
+	top: 300px; 
+	width: 100px; 
+	margin-top: 90px; 
+	margin-left: 45px;
+}
+
+#twitter {
+	position: absolute; 
+	left: 750px; 
+	top: 300px; 
+	width: 100px; 
+	margin-top: 90px; 
+	margin-left: 45px;
+}
+
+#youtube {
+	position: absolute; 
+	left: 900px; 
+	top: 300px; 
+	width: 100px; 
+	margin-top: 90px; 
+	margin-left: 45px;
+}
+
+#nba {
+	position: absolute; 
+	left: 1030px; 
+	top: 295px; 
+	width: 145px; 
+	height: 115px;
+	margin-top: 90px; 
+	margin-left: 45px;
+
+}
+
+
+
