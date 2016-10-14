@@ -41,6 +41,25 @@ function  info2(){
 	
 }
 
+function  info3(){
+	var answer3 = "Yes";
+	document.getElementById("answer3").innerHTML = answer3;
+	
+}
+
+function  info4(){
+	var answer4 = "Yes";
+	document.getElementById("answer4").innerHTML = answer4;
+	
+}
+
+function  info5(){
+	var answer5 = "Yes";
+	document.getElementById("answer5").innerHTML = answer5;
+	
+}
+
+
 
 </script>
 
@@ -67,6 +86,7 @@ function  info2(){
 	<p id = "interest2"> Playing musical instruments | Photography | Painting </p>
 	<p id = "interest3"> Game developer | Cooking | Mechanic </p>
 
+	<h3 id = "websites"> Favorite Websites </h3>
 	</div>
 
 	<div> 
@@ -88,18 +108,43 @@ function  info2(){
 	</div>
 
 	<div id = "trivia">
-		<form>
-		<p>Is Mikha awesome?</p>
+		
+		<h3 id ="triviaName">Trivia</h3>
+		
+		<form id="trivia1">
+		<p>1st Trivia</p>
+		<p id=triviaQ1>Where were I born?</p>
 		<input type="button" value="Find out!" onclick="info1()" />
 		<p id="answer1"></p>
 		</form>
 		
-		<form>
-		<p>Is Marc awesome?</p>
+		<form id="trivia2">
+		<p>2nd Trivia</p>
+		<p id=triviaQ2>What's my all-time favorite town or city? Why?</p>
 		<input type="button" value="Find out!" onclick="info2()"/>
 		<p id="answer2"></p>
 		</form>
 
+		<form id="trivia3">
+		<p>3rd Trivia</p>
+		<p id=triviaQ3>Red or Pink?</p>
+		<input type="button" value="Find out!" onclick="info3()"/>
+		<p id="answer3"></p>
+		</form>
+
+		<form id="trivia4">
+		<p>4th Trivia</p>
+		<p id=triviaQ4>Do you think I'm strong?</p>
+		<input type="button" value="Find out!" onclick="info4()"/>
+		<p id="answer4"></p>
+		</form>
+
+		<form id="trivia5">
+		<p>5th Trivia</p>
+		<p id=triviaQ5>What do you think I love to do most?</p>
+		<input id ="button5" type="button" value="Find out!" onclick="info5()"/>
+		<p id="answer5"></p>
+		</form>
 	
 	</div>
 </div>

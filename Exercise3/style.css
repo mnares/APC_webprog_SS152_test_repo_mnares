@@ -109,6 +109,13 @@ body {
 	margin-left: 60px; color: #00526B;
 }
 
+#websites{
+	position: absolute; 
+	margin-top: 260px; 
+	margin-left: 50px; 
+	color: #00526B;
+}
+
 #facebook {
 	position: absolute; 
 	left: 600px; 
@@ -152,12 +159,100 @@ body {
 	position: absolute; 
 	background-color: #D8E4FF; 
 	width: 1255px; 
-	height: 250px; 
+	height: 300px;
 	margin-top: 25px;
-	margin-left:45px;
+	margin-left: 45px;
+	margin-bottom: 15px;
+	font-family: courier;
+}
+
+#triviaName {
+	position: absolute; 
+	margin-top: 20px; 
+	margin-left: 30px; 
+	color: #00526B;
+}
+
+#trivia1 {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: 45px; 
+	color: #00526B;
+
+}
+
+#trivia2 {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: 180px; 
+	color: #00526B;
+
+}
+
+#trivia3 {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: 315px; 
+	color: #00526B;
+
+}
+
+#trivia4 {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: 450px; 
+	color: #00526B;
+
+}
+
+#trivia5 {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: 585px; 
+	color: #00526B;
+
 }
 
 
+#triviaQ1 {
+	position: absolute; 
+	margin-top: 40px; 
+	margin-left: px; 
+	color: #00526B;
+
+}
+
+#triviaQ2 {
+	position: absolute; 
+	margin-top: 40px;
+	margin-left: 180px;
+	color: #00526B;
+
+}
+
+#triviaQ3 {
+	position: absolute; 
+	margin-top: 40px;
+	margin-left: 315px; 
+	color: #00526B;
+
+}
+
+#triviaQ4{
+	position: absolute; 
+	margin-top: 40px;
+	margin-left: 450px; 
+	color: #00526B;
+
+}
+
+#triviaQ5{
+	position: absolute; 
+	margin-top: 40px;
+	margin-left: 585px; 
+	color: #00526B;
+
+}
 
 
 		#sun {
