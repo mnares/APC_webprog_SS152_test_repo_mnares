@@ -27,20 +27,20 @@ function init(){
 	  document.body.appendChild(star);
 	}
 
-	var first = document.getElementById("fname").value;
-	var last = document.getElementById("lname").value;
-	var name = first+" "+last;
-
-	alert(name);
 }
 
-function  info(){
-	
-
-
-
+function  info1(){
+	var answer1 = "Yes";
+	document.getElementById("answer1").innerHTML = answer1;
 	
 }
+
+function  info2(){
+	var answer2 = "Yes";
+	document.getElementById("answer2").innerHTML = answer2;
+	
+}
+
 
 </script>
 
@@ -85,8 +85,24 @@ function  info(){
 		<a href = "http://www.nba.com/" target="_blank">
 			 <img src="10.png" id = "nba">
 		</a>
-		</div>
 	</div>
+
+	<div id = "trivia">
+		<form>
+		<p>Is Mikha awesome?</p>
+		<input type="button" value="Find out!" onclick="info1()" />
+		<p id="answer1"></p>
+		</form>
+		
+		<form>
+		<p>Is Marc awesome?</p>
+		<input type="button" value="Find out!" onclick="info2()"/>
+		<p id="answer2"></p>
+		</form>
+
+	
+	</div>
+</div>
 
 
 	

@@ -147,6 +147,18 @@ body {
 
 }
 
+#trivia{
+	
+	position: absolute; 
+	background-color: #D8E4FF; 
+	width: 1255px; 
+	height: 250px; 
+	margin-top: 25px;
+	margin-left:45px;
+}
+
+
+
 
 		#sun {
 		    position: absolute;
