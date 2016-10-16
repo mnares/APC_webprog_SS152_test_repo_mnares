@@ -184,7 +184,7 @@ body {
 #trivia2 {
 	position: absolute; 
 	margin-top: 40px; 
-	margin-left: 180px; 
+	margin-left: 20%; 
 	color: #00526B;
 
 }
@@ -192,7 +192,7 @@ body {
 #trivia3 {
 	position: absolute; 
 	margin-top: 40px; 
-	margin-left: 315px; 
+	margin-left: 40%; 
 	color: #00526B;
 
 }
@@ -200,7 +200,7 @@ body {
 #trivia4 {
 	position: absolute; 
 	margin-top: 40px; 
-	margin-left: 450px; 
+	margin-left: 60%; 
 	color: #00526B;
 
 }
@@ -208,51 +208,26 @@ body {
 #trivia5 {
 	position: absolute; 
 	margin-top: 40px; 
-	margin-left: 585px; 
+	margin-left: 80%; 
 	color: #00526B;
 
 }
 
 
-#triviaQ1 {
-	position: absolute; 
-	margin-top: 40px; 
-	margin-left: px; 
-	color: #00526B;
-
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    padding: 16px 32px;
+    font-family: courier;
+    color:#00526B;;
 }
 
-#triviaQ2 {
-	position: absolute; 
-	margin-top: 40px;
-	margin-left: 180px;
-	color: #00526B;
+.button:hover {
+    background-color: #008CBA;
+    color: white;
 
-}
 
-#triviaQ3 {
-	position: absolute; 
-	margin-top: 40px;
-	margin-left: 315px; 
-	color: #00526B;
-
-}
-
-#triviaQ4{
-	position: absolute; 
-	margin-top: 40px;
-	margin-left: 450px; 
-	color: #00526B;
-
-}
-
-#triviaQ5{
-	position: absolute; 
-	margin-top: 40px;
-	margin-left: 585px; 
-	color: #00526B;
-
-}
 
 
 		#sun {
