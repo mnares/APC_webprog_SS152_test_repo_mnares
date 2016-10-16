@@ -228,6 +228,12 @@ body {
     color: white;
 
 }
+#audio {
+	position: absolute;
+	margin-left: 50%;
+	margin-top: 10px;
+
+}
 
 
 		#sun {
