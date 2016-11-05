@@ -99,10 +99,6 @@ body {
   margin-left: 10px;
 }
 
-
-
-
-
 #sun {
         position: absolute;
         width: 20em; height: 20em;
