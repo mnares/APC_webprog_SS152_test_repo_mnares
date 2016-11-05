@@ -1,9 +1,16 @@
 <?php
 include_once 'dbconfig.php';
-$fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
-$fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
+if(isset($_GET['edit_id']))
+{
+ $sql_query="SELECT * FROM users WHERE user_id=".$_GET['edit_id'];
+ $result_set=mysql_query($sql_query);
+ $fetched_row=mysql_fetch_array($result_set);
+}
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$Err = $fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
+	
+if(isset($_POST['btn-update']))
+ {
   if (empty($_POST["fullname"])) {
     $fullnameErr = "Full Name is required";
   } else {
@@ -55,8 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[0-9]*$/",$phoneNum)) {
       $phoneNumErr = "Only numbers are allowed"; 
     }
-
-  
+    
   if (empty($_POST["comment"])) {
     $comment = "";
   } else {
@@ -72,12 +78,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+
+
+
+  if(mysql_query($sql_query) && $Err != "Err"){
+    ?>
+    <script type="text/javascript">
+    alert('Data Are Updated Successfully');
+    window.location.href='index.php';
+    </script>
+    <?php
   }
+  else{
+    ?>
+    <script type="text/javascript">
+    alert('error occured while updating data');
+    </script>
+    <?php
+  }
+}
+
+if(isset($_POST['btn-cancel']))
+{
+ header("Location: index.php");
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 ?>
 
 <!DOCTYPE HTML>  
@@ -352,8 +384,6 @@ input[type=text], select {
   }
 
 }
-
-
 
 </script>  
 
