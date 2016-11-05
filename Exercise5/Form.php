@@ -380,8 +380,8 @@ input[type=text], select {
           <tr>
             <td>
              Gender:
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female" required> Male
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male"> Female 
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Male") echo "checked";?> value="Male" required> Male
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female"> Female 
                <span class="error">* <br><?php echo $genderErr;?></span>
             </td>
          </tr>
