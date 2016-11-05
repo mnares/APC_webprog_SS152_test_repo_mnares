@@ -441,7 +441,7 @@ input[type=text], select {
                 <input type="text" name="comment" placeholder="Comment" value="<?php echo $fetched_row['comment']; ?>">
           </td>
         </tr>
-        
+      <br>
         <td>
           <p><span class="error">* required field </span></p>
           <button type="submit" name="btn-update"><strong>UPDATE</strong></button>
