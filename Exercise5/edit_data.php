@@ -103,6 +103,7 @@ function test_input($data) {
 
 <!DOCTYPE HTML>  
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
 <style>
   
@@ -378,75 +379,77 @@ input[type=text], select {
 
 <div style="position: relative">
   <div class="box">
-    <h2 id="formvalid"> Form Validation </h2>
-    <form method="post">
-      
-          <td><a href = "Homepage.php">Back to Main Page</a></td>
+    <h2 id="formValid"> Form Validation </h2>
+    <form method="post">  
+     
+        <tr>
+          <td><a href = "Homepage.php"> Back to Main Page </a></td> 
         </tr>
-        <br>
-          <tr>
-           <td>
-            Full Name:
-            <input id="tb1" type="text" name="fullname" placeholder="Full Name" value="<?php echo $fullname;?>" required>
-              <span class="error">* <br><?php echo $fullnameErr;?></span>
-            </td>
-        </tr>
-        <br>
-          <tr>
-            <td>
-            Nickname:
-            <input id="tb2" type="text" name="nickname" placeholder="Nickname" value="<?php echo $nickname;?>" required>
-              <span class="error">* <br><?php echo $nicknameErr;?></span>
-            </td>
-          </tr>
-         <br>
-          <tr>
-            <td>
-            Email:
-            <input id="tb3" type="text" name="email" placeholder="Email" value="<?php echo $email;?>" required>
-              <span class="error">* <br><?php echo $emailErr;?></span>
-            </td>
-          </tr>
-        <br>
-          <tr>
-            <td>
-            Address:
-            <input id= "tb4" type="text" name="address" placeholder="Address" value="<?php echo $address;?>">
-              <span class="error">* <br><?php echo $addressErr;?></span>
-            </td>
-          </tr>
-        <br>
-          <tr>
-            <td>
-             Gender:
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female" required> Male
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male"> Female 
-               <span class="error">* <br><?php echo $genderErr;?></span>
-            </td>
-         </tr>
-        <br>
-          <tr>
-            <td>
-            Phone #:
-              <input id="tb6" type="text" name="phoneNum" placeholder="Phone Number" value="<?php echo $phoneNum;?>">
-              <span class="error">* <br><?php echo $phoneNumErr;?></span>
-            </td>
-          </tr>
-         <br>
-          <tr>
-            <td>
-              Comment:
-                <input type="text" name="comment" placeholder="Comment" value="<?php echo $comment;?>">
-            </td>
-          </tr>
-         <br>
+      <br>
+        <tr>
           <td>
-            <p><span class="error">* required field</span></p>
-            <button type="submit" name="submit" value="Submit"> SUBMIT </button>
+          Full Name:
+            <input type="text" name="fullname" placeholder="Full Name" value="<?php echo $fetched_row['fullname']; ?>" required />
+            <span class="error">* <br><?php echo $fullnameErr;?></span>
           </td>
+        </tr>
+      <br>
+        <tr>
+          <td>
+          Nickname:
+            <input type="text" name="nickname" placeholder="Nickname" value="<?php echo $fetched_row['nickname']; ?>" required />
+            <span class="error">* <br><?php echo $nicknameErr;?></span>
+          </td>
+        </tr>
+      <br>
+        <tr>
+          <td>
+            Email:
+            <input type="text" name="email" placeholder="Email" value="<?php echo $fetched_row['email']; ?>" required />
+            <span class="error">* <br><?php echo $emailErr;?></span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            Address:
+            <input type="text" name="address" placeholder="Home Address" value="<?php echo $fetched_row['address']; ?>" />
+            <span class="error">* <br><?php echo $addressErr;?></span>
+          </td>
+        </tr>
+        
+        </tr>
+          <td>
+            Gender:
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male"> Male
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female"> Female 
+            <span class="error">* <br><?php echo $genderErr;?></span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            Phone #:
+            <input type="text" name="phoneNum" placeholder="Phone Number" value="<?php echo $fetched_row['phoneNum']; ?>" required />
+            <span class="error">* <br><?php echo $phoneNumErr;?></span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+             Comment:
+                <input type="text" name="comment" placeholder="Comment" value="<?php echo $fetched_row['comment']; ?>">
+          </td>
+        </tr>
+        
+        <td>
+          <p><span class="error">* required field </span></p>
+          <button type="submit" name="btn-update"><strong>UPDATE</strong></button>
+          <button type="submit" name="btn-cancel"><strong>Cancel</strong></button>
+        </td>
+        </tr>
       </table>
     </form>
   </div>
-
 </body>
 </html>
