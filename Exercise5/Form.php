@@ -341,8 +341,7 @@ input[type=text], select {
 <div style="position: relative">
   <div class="box">
     <h2 id="formvalid"> Form Validation </h2>
-    <form method="post">
-      
+    <form method="post"> 
           <td><a href = "Homepage.php">Back to Main Page</a></td>
         </tr>
         <br>
