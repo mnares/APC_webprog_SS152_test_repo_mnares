@@ -81,7 +81,7 @@ function delete_id(id)
 {
  if(confirm('Sure to Delete ?'))
  {
-  window.location.href='index.php?delete_id='+id;
+  window.location.href='Homepage.php?delete_id='+id;
  }
 }
 
@@ -169,7 +169,7 @@ function delete_id(id)
 		</form>
 
 		<form id="trivia4">
-		<p>4th Trivi <br><br>
+		<p>4th Trivia <br><br>
 			Do you think <br> I'm strong?</p>
 		<br>
 		<input class="button" type="button" value="Find out!" onclick="info4()"/>
@@ -185,9 +185,48 @@ function delete_id(id)
 		</form>
 
 		<h3 id ="formName">Form Validation</h3>
-		<form id="form1"> 	
-		<input class="button" type="button" value="Form Validation" onclick="window.location='Form.php'"/>
-		</form>
+	
+		<div id="body">
+ 		<div id="data">
+    		<table align="center">
+    		<tr>
+    		<th id="add_data"colspan="10" onclick="window.location='form.php'" style="cursor: pointer"> Input Data Here </a></th>
+    		</tr>
+    		<th>Full Name</th>
+    		<th>Nickame</th>
+    		<th>Email</th>
+    		<th>Home Address</th>
+    		<th>Gender</th>
+    		<th>Phone Number</th>
+    		<th>Comment</th>
+    		<th colspan="2">Operations</th>
+    		</tr>
+    
+    	<?php
+ 		$sql_query="SELECT * FROM users";
+ 		$result_set=mysql_query($sql_query);
+ 		while($row=mysql_fetch_row($result_set))
+ 		{
+  		?>
+
+        <tr>
+        <td><?php echo $row[1]; ?></td>
+        <td><?php echo $row[2]; ?></td>
+        <td><?php echo $row[3]; ?></td>
+        <td><?php echo $row[4]; ?></td>
+        <td><?php echo $row[5]; ?></td>
+        <td><?php echo $row[6]; ?></td>
+        <td><?php echo $row[7]; ?></td>
+        <td><?php echo $row[8]; ?></td>
+  		<td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="p_edit.png" align="EDIT" style="width: 20px"/></a></td>
+        <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="p_drop.png" align="DELETE" /></a></td>
+        </tr>
+        <?php
+ }
+ ?>
+    </table>
+    </div>
+</div>
 
 	</div>
 	

@@ -145,7 +145,7 @@ function  info5(){
 		</form>
 
 		<form id="trivia4">
-		<p>4th Trivi <br><br>
+		<p>4th Trivia <br><br>
 			Do you think <br> I'm strong?</p>
 		<br>
 		<input class="button" type="button" value="Find out!" onclick="info4()"/>
