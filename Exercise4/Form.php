@@ -24,6 +24,117 @@ body {
 
 }
 
+input[type=text], select {
+  width: 50%;
+  height: 10px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+textarea{
+  width: 230px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+
+}
+
+textarea:focus {
+    width: 75%;
+}
+
+.input{
+  position: absolute;
+  left: 65%;
+  margin-top: 20px;
+  background-color: #5B5552;
+  box-shadow: 1px 2px 20px #272532;
+  border-radius: 5px;
+  font-family: courier;
+  width: 250px;
+  height: 450px;
+  color: #EEE7DA;
+  text-align: center;
+}
+
+.web_button{
+  display: none;
+  margin-top: 100px;
+  margin-left: 65px;
+  background-color: #EEE7DA;
+  box-shadow: 1px 2px 20px #272532;
+  border-radius: 5px;
+  font-family: calibri;
+  width: 120px;
+  height: 30px;
+  color: #5B5552;
+  line-height: 2em;
+  cursor: pointer;
+}
+
+.web_button:hover{
+  background-color: #f9f7f3;
+}
+
+#formvalid {
+  text-align: center;
+}
+
+#submit{
+  position: absolute;
+  margin-left: 90px;
+}
+
+.error {
+  color: #FF0000;
+ 
+}
+
+#tb1 {
+  margin-left: 10px;
+}
+
+#tb2 {
+  margin-left: 20px;
+}
+
+#tb3 {
+  margin-left: 45px;
+}
+
+#tb4 {
+  margin-left: 25px;
+}
+
+#tb5 {
+  margin-left: 10px;
+}
+
+#tb6 {
+  margin-left: 20px;
+}
+
+#tb7 {
+  margin-left: 10px;
+}
+
+
+
+
+
 #sun {
         position: absolute;
         width: 20em; height: 20em;
@@ -156,108 +267,6 @@ body {
 
     }
 
-  input[type=text], select {
-  width: 50%;
-  height: 10px;
-  padding: 12px 15px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-
-}
-
-textarea{
-  width: 230px;
-  height: 50px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-
-}
-
-textarea:focus {
-    width: 75%;
-}
-
-.input{
-  position: absolute;
-  left: 65%;
-  margin-top: 20px;
-  background-color: #5B5552;
-  box-shadow: 1px 2px 20px #272532;
-  border-radius: 5px;
-  font-family: courier;
-  width: 250px;
-  height: 450px;
-  color: #EEE7DA;
-  text-align: center;
-}
-
-.web_button{
-  display: none;
-  margin-top: 100px;
-  margin-left: 65px;
-  background-color: #EEE7DA;
-  box-shadow: 1px 2px 20px #272532;
-  border-radius: 5px;
-  font-family: calibri;
-  width: 120px;
-  height: 30px;
-  color: #5B5552;
-  line-height: 2em;
-  cursor: pointer;
-}
-
-.web_button:hover{
-  background-color: #f9f7f3;
-}
-
-#formvalid {
-  text-align: center;
-}
-
-#tb1 {
-  margin-left: 13.5%;
-}
-#tb2 {
-  margin-left: 15.5%;
-}
-#tb3 {
-  margin-left: 19%;
-}
-#tb4 {
-  margin-left: 4%;
-}
-#tb5 {
-  margin-left: 7%;
-}
-#tb6 {
-  margin-left: 12%;
-}
-#submit{
-  position: absolute;
-  margin-left: 90px;
-}
-
-.error {
-  color: #FF0000;
- 
-}
-
-
-
-
-
-
 </style>
 </head>
 <body  onload = "init()">
@@ -288,17 +297,17 @@ textarea:focus {
 
 <?php
 // define variables and set to empty values
-$fnameErr = $nicknameErr = $emailErr = $genderErr = $homeAddErr = $phoneNumErr = "";
-$fname =  $nickname = $email = $gender = $comment = $homeAdd = $phoneNum = "";
+$fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
+$fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["fname"])) {
-    $fnameErr = "Full Name is required";
+  if (empty($_POST["fullname"])) {
+    $fullnameErr = "Full Name is required";
   } else {
-    $fname = test_input($_POST["fname"]);
+    $fullname = test_input($_POST["fullname"]);
     // check if fname only contains letters and numbers
-    if (!preg_match("/^[a-zA-Z0-9 ]*$/", $fname)) {
-      $fnameErr = "Only letters and numbers allowed"; 
+    if (!preg_match("/^[a-zA-Z0-9 ]*$/", $fullname)) {
+      $fullnameErr = "Only letters and numbers allowed"; 
     }
   }
 
@@ -322,11 +331,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
     
-  if (empty($_POST["homeAdd"])) {
-    $homeAdd = "";
-  } else {
-    $homeAdd = test_input($_POST["homeAdd"]);
-  }
+    $address= test_input($_POST["address"]);
+    // check if homeAdd only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$address)) {
+      $addressErr = "Only letters and white space allowed";
+      $Err = "Err"; 
+    }
 
   if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
@@ -360,54 +370,89 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 ?>
 
+
 <div style="position: relative">
   <div class="box">
     <h2 id="formvalid"> Form Validation </h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-      Full Name: <input id="tb1" type="text" name="fname" value="<?php echo $fname;?>">
-      <span class="error">* <br><?php echo $fnameErr;?></span>
-      <br>
-
-      Nickname: <input id="tb2" type="text" name="nickname" value="<?php echo $nickname;?>">
-      <span class="error">* <br><?php echo $nicknameErr;?></span>
-      <br>
+    <form method="post">
       
-      E-mail: <input id="tb3" type="text" name="email" value="<?php echo $email;?>">
-      <span class="error">* <br><?php echo $emailErr;?></span>
-      <br>
-      
-      Home Address: <input id="tb4" type="text" name="homeAdd" value="<?php echo $homeAdd;?>">
-      <span class="error"><?php echo $homeAddErr;?></span>
-      <br><br>
-
-      Gender:
-      <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
-      <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
-      <span class="error">* <br><?php echo $genderErr;?></span>
-      <br>
-
-      Phone Number: <input id="tb5" type="text" name="phoneNum" value="<?php echo $phoneNum;?>">
-      <span class="error">* <br><?php echo $phoneNumErr;?></span>
-      <br>
-      
-      Comment: <textarea id="tb6" name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-      <br><br>
-
-      <p><span class="error" id="error">* required field.</span>
-      <input onclick="showButton()" id="submit" type="submit" name="submit" value="Submit"> </p>
+          <td><a href = "Homepage.html">Back to Main Page</a></td>
+        </tr>
+        <br>
+          <tr>
+           <td>
+            Full Name:
+            <input id="tb1" type="text" name="fullname" placeholder="Full Name" value="<?php echo $fullname;?>" required>
+              <span class="error">* <br><?php echo $fullnameErr;?></span>
+            </td>
+        </tr>
+        <br>
+          <tr>
+            <td>
+            Nickname:
+            <input id="tb2" type="text" name="nickname" placeholder="Nickname" value="<?php echo $nickname;?>" required>
+              <span class="error">* <br><?php echo $nicknameErr;?></span>
+            </td>
+          </tr>
+         <br>
+          <tr>
+            <td>
+            Email:
+            <input id="tb3" type="text" name="email" placeholder="Email" value="<?php echo $email;?>" required>
+              <span class="error">* <br><?php echo $emailErr;?></span>
+            </td>
+          </tr>
+        <br>
+          <tr>
+            <td>
+            Address:
+            <input id= "tb4" type="text" name="address" placeholder="Address" value="<?php echo $address;?>">
+              <span class="error">* <br><?php echo $addressErr;?></span>
+            </td>
+          </tr>
+        <br>
+          <tr>
+            <td>
+             Gender:
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female" required> Female
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male"> Male 
+               <span class="error">* <br><?php echo $genderErr;?></span>
+            </td>
+         </tr>
+        <br>
+          <tr>
+            <td>
+            Phone #:
+              <input id="tb6" type="text" name="phoneNum" placeholder="Phone Number" value="<?php echo $phoneNum;?>">
+              <span class="error">* <br><?php echo $phoneNumErr;?></span>
+            </td>
+          </tr>
+         <br>
+          <tr>
+            <td>
+              Comment:
+                <input type="text" name="comment" placeholder="Comment" value="<?php echo $comment;?>">
+            </td>
+          </tr>
+         <br>
+          <td>
+            <p><span class="error">* required field</span></p>
+            <button type="submit" name="submit" value="submit"> SUBMIT </button>
+          </td>
+      </table>
     </form>
   </div>
 
   <?php
     echo '<div class="input">';
     echo "<h2>Information:</h2>";
-    echo $fname;
+    echo $fullname;
     echo "<br><br>";
     echo $nickname;
     echo "<br><br>";
     echo $email;
     echo "<br><br>";
-    echo $homeAdd;
+    echo $address;
     echo "<br><br>";
     echo $gender;
     echo "<br><br>";
