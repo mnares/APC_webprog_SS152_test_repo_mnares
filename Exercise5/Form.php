@@ -1,80 +1,3 @@
-<?php
-// define variables and set to empty values
-$fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
-$fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["fullname"])) {
-    $fnameErr = "Full Name is required";
-  } else {
-    $fname = test_input($_POST["fullname"]);
-    // check if fname only contains letters and numbers
-    if (!preg_match("/^[a-zA-Z0-9 ]*$/", $fname)) {
-      $fnameErr = "Only letters and numbers allowed"; 
-    }
-  }
-
-  if (empty($_POST["nickname"])) {
-    $nicknameErr = "Nickname is required";
-  } else {
-    $nickname = test_input($_POST["nickname"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
-      $nicknameErr = "Only letters and white space allowed"; 
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format"; 
-    }
-  }
-    
-  if (empty($_POST["address"])) {
-    $homeAdd = "";
-  } else {
-    $homeAdd = test_input($_POST["address"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-
-  if (empty($_POST["phoneNum"])) {
-    $phoneNumErr = "Phone Number is required";
-  } else {
-    $phoneNum = test_input($_POST["phoneNum"]);
-    // check if phoneNum only contains numbers
-    if (!preg_match("/^[0-9]*$/",$phoneNum)) {
-      $phoneNumErr = "Only numbers are allowed"; 
-    }
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  }
-
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
-?>
-
-
-
-
 <!DOCTYPE HTML>  
 <html>
 <head>
@@ -170,24 +93,6 @@ textarea:focus {
   text-align: center;
 }
 
-#tb1 {
-  margin-left: 13.5%;
-}
-#tb2 {
-  margin-left: 15.5%;
-}
-#tb3 {
-  margin-left: 19%;
-}
-#tb4 {
-  margin-left: 3%;
-}
-#tb5 {
-  margin-left: 7%;
-}
-#tb6 {
-  margin-left: 12%;
-}
 #submit{
   position: absolute;
   margin-left: 90px;
@@ -197,6 +102,38 @@ textarea:focus {
   color: #FF0000;
  
 }
+
+#tb1 {
+  margin-left: 10px;
+}
+
+#tb2 {
+  margin-left: 20px;
+}
+
+#tb3 {
+  margin-left: 45px;
+}
+
+#tb4 {
+  margin-left: 25px;
+}
+
+#tb5 {
+  margin-left: 10px;
+}
+
+#tb6 {
+  margin-left: 20px;
+}
+
+#tb7 {
+  margin-left: 10px;
+}
+
+
+
+
 
 #sun {
         position: absolute;
@@ -358,70 +295,146 @@ textarea:focus {
 
 </script>  
 
+<?php
+// define variables and set to empty values
+$fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
+$fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["fullname"])) {
+    $fullnameErr = "Full Name is required";
+  } else {
+    $fullname = test_input($_POST["fullname"]);
+    // check if fname only contains letters and numbers
+    if (!preg_match("/^[a-zA-Z0-9 ]*$/", $fullname)) {
+      $fullnameErr = "Only letters and numbers allowed"; 
+    }
+  }
+
+  if (empty($_POST["nickname"])) {
+    $nicknameErr = "Nickname is required";
+  } else {
+    $nickname = test_input($_POST["nickname"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
+      $nicknameErr = "Only letters and white space allowed"; 
+    }
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }
+    
+    $address= test_input($_POST["address"]);
+    // check if homeAdd only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$address)) {
+      $addressErr = "Only letters and white space allowed";
+      $Err = "Err"; 
+    }
+
+  if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+
+  if (empty($_POST["phoneNum"])) {
+    $phoneNumErr = "Phone Number is required";
+  } else {
+    $phoneNum = test_input($_POST["phoneNum"]);
+    // check if phoneNum only contains numbers
+    if (!preg_match("/^[0-9]*$/",$phoneNum)) {
+      $phoneNumErr = "Only numbers are allowed"; 
+    }
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+  }
+
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+?>
 
 
 <div style="position: relative">
   <div class="box">
     <h2 id="formvalid"> Form Validation </h2>
     <form method="post">
-      <table align="center">
-        <tr align="center">
-          <td></td>
+      
+          <td><a href = "Homepage.html">Back to Main Page</a></td>
         </tr>
-
-
-        <tr>
+        <br>
+          <tr>
+           <td>
+            Full Name:
+            <input id="tb1" type="text" name="fullname" placeholder="Full Name" value="<?php echo $fullname;?>" required>
+              <span class="error">* <br><?php echo $fullnameErr;?></span>
+            </td>
+        </tr>
+        <br>
+          <tr>
             <td>
-            <input type="text" name="fullname" placeholder="Full Name" value="<?php echo $fullname;?>" required>
-              <span class="error">* <br><?php echo $fnameErr;?></span>
+            Nickname:
+            <input id="tb2" type="text" name="nickname" placeholder="Nickname" value="<?php echo $nickname;?>" required>
+              <span class="error">* <br><?php echo $nicknameErr;?></span>
             </td>
-        </tr>
-
-         <tr>
+          </tr>
+         <br>
+          <tr>
             <td>
-            <input type="text" name="nickname" placeholder="Nickname" value="<?php echo $nickname;?>" required>
-              <span class="error">* <br><?php echo $fnameErr;?></span>
+            Email:
+            <input id="tb3" type="text" name="email" placeholder="Email" value="<?php echo $email;?>" required>
+              <span class="error">* <br><?php echo $emailErr;?></span>
             </td>
-        </tr>
-
-         <tr>
+          </tr>
+        <br>
+          <tr>
             <td>
-            <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>" required>
-              <span class="error">* <br><?php echo $fnameErr;?></span>
+            Address:
+            <input id= "tb4" type="text" name="address" placeholder="Address" value="<?php echo $address;?>">
+              <span class="error">* <br><?php echo $addressErr;?></span>
             </td>
-        </tr>
-
-         <tr>
+          </tr>
+        <br>
+          <tr>
             <td>
-            <input type="text" name="address" placeholder="Home Address" value="<?php echo $address;?>">
-              <span class="error">* <br><?php echo $fnameErr;?></span>
+             Gender:
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female" required> Female
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male"> Male 
+               <span class="error">* <br><?php echo $genderErr;?></span>
             </td>
-        </tr>
-
-        <tr>
-          <td>
-              Gender:
-              <input type="radio" name="gender" <?php if (isset($gender) && gender=="female") echo "checked";?> value="Female" required> Female
-              <input type="radio" name="gender" <?php if (isset($gender) && gender=="male") echo "checked";?> value="Male" required> Male
-              <span class="error">* <br><?php echo $fnameErr;?></span>
+         </tr>
+        <br>
+          <tr>
+            <td>
+            Phone #:
+              <input id="tb6" type="text" name="phoneNum" placeholder="Phone Number" value="<?php echo $phoneNum;?>">
+              <span class="error">* <br><?php echo $phoneNumErr;?></span>
             </td>
-        </tr>
-
-        <tr>
-          <td>
-            <input type="text" name="phoneNum" placeholder="Phone Number" value="<?php echo $phoneNum;?>">
-              <span class="error">* <br><?php echo $fnameErr;?></span>
+          </tr>
+         <br>
+          <tr>
+            <td>
+              Comment:
+                <input type="text" name="comment" placeholder="Comment" value="<?php echo $comment;?>">
             </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            <input type="text" name="comment" placeholder="Comment" value="<?php echo $comment;?>">
-              <span class="error">* <br><?php echo $fnameErr;?></span>
-            </td>
-        </tr>
-
+          </tr>
+         <br>
           <td>
             <p><span class="error">* required field</span></p>
             <button type="submit" name="submit" value="submit"> SUBMIT </button>
