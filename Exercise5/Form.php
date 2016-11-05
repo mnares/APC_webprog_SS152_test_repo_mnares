@@ -332,6 +332,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!preg_match("/^[0-9]*$/",$phoneNum)) {
       $phoneNumErr = "Only numbers are allowed"; 
     }
+
+  if($Err != "Err"){
+      $sql_query = "INSERT INTO users(fullname, nickname, email, address, gender, phoneNum, comment) VALUES('$fullname',$nickname', '$email','$address','$gender','$phoneNum', '$comment')";
+      mysql_query($sql_query);
+    }
+
   }
 
   if (empty($_POST["comment"])) {
@@ -340,7 +346,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = test_input($_POST["comment"]);
   }
 
-  }
+}
 
   function test_input($data) {
     $data = trim($data);
