@@ -1,5 +1,6 @@
 <?php
 include_once 'dbconfig.php';
+
 $fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
 $fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
 
@@ -56,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $phoneNumErr = "Only numbers are allowed"; 
     }
 
-  
   if (empty($_POST["comment"])) {
     $comment = "";
   } else {
@@ -192,10 +192,6 @@ input[type=text], select {
 #tb7 {
   margin-left: 10px;
 }
-
-
-
-
 
 #sun {
         position: absolute;
@@ -352,8 +348,6 @@ input[type=text], select {
   }
 
 }
-
-
 
 </script>  
 

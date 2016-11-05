@@ -1,10 +1,21 @@
+<?php
+include_once 'dbconfig.php';
+
+// delete condition
+if(isset($_GET['delete_id']))
+{
+ $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
+ mysql_query($sql_query);
+ header("Location: $_SERVER[PHP_SELF]");
+}
+// delete condition
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-		
-	
 </head>
 <body>
 		
@@ -59,7 +70,20 @@ function  info5(){
 	
 }
 
-
+function edt_id(id)
+{
+ if(confirm('Sure to edit ?'))
+ {
+  window.location.href='edit_data.php?edit_id='+id;
+ }
+}
+function delete_id(id)
+{
+ if(confirm('Sure to Delete ?'))
+ {
+  window.location.href='index.php?delete_id='+id;
+ }
+}
 
 </script>
 

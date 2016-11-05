@@ -78,14 +78,11 @@ if(isset($_POST['btn-update']))
 
 }
 
-
-
-
   if(mysql_query($sql_query) && $Err != "Err"){
     ?>
     <script type="text/javascript">
     alert('Data Are Updated Successfully');
-    window.location.href='index.php';
+    window.location.href='form.php';
     </script>
     <?php
   }
@@ -100,7 +97,7 @@ if(isset($_POST['btn-update']))
 
 if(isset($_POST['btn-cancel']))
 {
- header("Location: index.php");
+ header("Location: form.php");
 }
 
 function test_input($data) {
