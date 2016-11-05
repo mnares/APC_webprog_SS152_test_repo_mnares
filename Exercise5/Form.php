@@ -406,7 +406,6 @@ input[type=text], select {
             <p><span class="error">* required field</span></p>
             <button type="submit" name="submit" value="Submit"> SUBMIT </button>
           </td>
-      </table>
     </form>
   </div>
 
