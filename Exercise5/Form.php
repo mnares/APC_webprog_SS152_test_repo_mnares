@@ -443,27 +443,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
   </div>
 
-  <?php
-    echo '<div class="input">';
-    echo "<h2>Information:</h2>";
-    echo $fullname;
-    echo "<br><br>";
-    echo $nickname;
-    echo "<br><br>";
-    echo $email;
-    echo "<br><br>";
-    echo $address;
-    echo "<br><br>";
-    echo $gender;
-    echo "<br><br>";
-    echo $phoneNum;
-    echo "<br><br>";
-    echo $comment;
-    echo '<div class="web_button">';
-    echo "My Website";
-    echo '</div>';
-    echo '</div>';
-  ?>
-
 </body>
 </html>
