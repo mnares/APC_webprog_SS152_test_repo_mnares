@@ -175,6 +175,13 @@ body {
 	color: #00526B;
 }
 
+#formName {
+	position: absolute; 
+	margin-top: 250px; 
+	margin-left: 30px; 
+	color: #00526B;
+}
+
 #trivia1 {
 	position: absolute; 
 	margin-top: 40px; 
@@ -213,6 +220,13 @@ body {
 	margin-left: 80%; 
 	color: #00526B;
 
+}
+
+#form1{
+	position: absolute; 
+	margin-top: 280px; 
+	margin-left: 45px; 
+	color: #00526B;
 }
 
 

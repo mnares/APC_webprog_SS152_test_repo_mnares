@@ -340,7 +340,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2 id="formvalid"> Form Validation </h2>
     <form method="post">
       
-          <td><a href = "Homepage.html">Back to Main Page</a></td>
+          <td><a href = "Homepage.php">Back to Main Page</a></td>
         </tr>
         <br>
           <tr>

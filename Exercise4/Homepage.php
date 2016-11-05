@@ -141,7 +141,7 @@ function  info5(){
 		<br>
 		<input class="button" type="button" value="Find out!" onclick="info3()"/>
 		<p id="answer3"></p>
-		<input class="button" type="button" value="Form Val." onclick="window.location='Form.php'"/>
+		
 		</form>
 
 		<form id="trivia4">
@@ -159,6 +159,12 @@ function  info5(){
 		<input class="button" type="button" value="Find out!" onclick="info5()"/>
 		<p id="answer5"></p>
 		</form>
+
+		<h3 id ="formName">Form Validation</h3>
+		<form id="form1"> 	
+		<input class="button" type="button" value="Form Validation" onclick="window.location='Form.php'"/>
+		</form>
+
 	</div>
 	
 </body>
