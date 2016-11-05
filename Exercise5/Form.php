@@ -56,9 +56,22 @@ if(isset($_POST['submit'])){
     if($Err != "Err"){
       $sql_query = "INSERT INTO users(fullname, nickname, email, address, gender, phoneNum, comment) VALUES('$fullname', '$nickname', '$email','$address','$gender','$phoneNum', '$comment')";
       mysql_query($sql_query);
+      ?>
+      <script type="text/javascript">
+      alert('Data are successfully saved!');
+      window.location.href='Homepage.php';
+      </script>
+      <?php
     }
+    else{
+    ?>
+    <script type="text/javascript">
+    alert('Error occured while saving data!');
+    </script>
+    <?php
+    }
+  }
 
-}
   function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
