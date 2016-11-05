@@ -2,76 +2,63 @@
 include_once 'dbconfig.php';
 
 $Err = $fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
-$fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
+$fullname = $nickname = $email = $gender = $comment = $address= $phoneNum = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["fullname"])) {
-    $fullnameErr = "Full Name is required";
-  } else {
+if(isset($_POST['submit'])){
     $fullname = test_input($_POST["fullname"]);
     // check if fname only contains letters and numbers
     if (!preg_match("/^[a-zA-Z0-9 ]*$/", $fullname)) {
       $fullnameErr = "Only letters and numbers allowed"; 
+      $Err = "Err";
     }
-  }
-
-  if (empty($_POST["nickname"])) {
-    $nicknameErr = "Nickname is required";
-  } else {
+  
     $nickname = test_input($_POST["nickname"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
       $nicknameErr = "Only letters and white space allowed"; 
+      $Err = "Err";
     }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
+
     $email = test_input($_POST["email"]);
     // check if e-mail address is well-formed
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format"; 
+      $Err = "Err";
     }
-  }
-    
-    $address= test_input($_POST["address"]);
+
+    $address = test_input($_POST["address"]);
     // check if homeAdd only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$address)) {
-      $addressErr = "Only letters and white space allowed";
+      $address = "Only letters and white space allowed";
       $Err = "Err"; 
     }
 
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-
-  if (empty($_POST["phoneNum"])) {
-    $phoneNumErr = "Phone Number is required";
-  } else {
+    if (empty($_POST["gender"])) {   
+      $genderErr = "Input gender";  
+      $Err = "Err";    
+    } else {    
+      $gender = test_input($_POST["gender"]);   
+    }
+  
     $phoneNum = test_input($_POST["phoneNum"]);
     // check if phoneNum only contains numbers
     if (!preg_match("/^[0-9]*$/",$phoneNum)) {
-      $phoneNumErr = "Only numbers are allowed"; 
+      $phoneNumErr = "Only numbers are allowed";
+      $Err = "Err"; 
     }
 
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
+    if (empty($_POST["comment"])) {    
+      $comment = "";    
+    } else {    
+      $comment = test_input($_POST["comment"]);   
+    }
 
-  if($Err != "Err"){
-      $sql_query = "INSERT INTO users(fullname, nickname, email, address, gender, phoneNum, comment) VALUES('$fullname',$nickname','$email','$address','$gender','$phoneNum', '$comment')";
+    if($Err != "Err"){
+      $sql_query = "INSERT INTO users(fullname, nickname, email, address, gender, phoneNum, comment) VALUES('$fullname', '$nickname', '$email','$address','$gender','$phoneNum', '$comment')";
       mysql_query($sql_query);
     }
 
-  }
-
 }
-
   function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -139,7 +126,7 @@ input[type=text], select {
   background-color: #EEE7DA;
   box-shadow: 1px 2px 20px #272532;
   border-radius: 5px;
-  font-family: calibri;
+  font-family: courier;
   width: 120px;
   height: 30px;
   color: #5B5552;
@@ -417,7 +404,7 @@ input[type=text], select {
          <br>
           <td>
             <p><span class="error">* required field</span></p>
-            <button type="submit" name="submit" value="submit"> SUBMIT </button>
+            <button type="submit" name="submit" value="Submit"> SUBMIT </button>
           </td>
       </table>
     </form>
