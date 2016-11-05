@@ -276,7 +276,7 @@ input[type=text], select {
 </script>  
 
 <?php
-// define variables and set to empty values
+include_once 'dbconfig.php';
 $fullnameErr = $nicknameErr = $emailErr = $genderErr = $addressErr = $phoneNumErr = "";
 $fullname =  $nickname = $email = $gender = $comment = $address= $phoneNum = "";
 
