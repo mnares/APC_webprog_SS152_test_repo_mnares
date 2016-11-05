@@ -448,7 +448,6 @@ input[type=text], select {
           <button type="submit" name="btn-cancel"><strong>Cancel</strong></button>
         </td>
         </tr>
-      </table>
     </form>
   </div>
 </body>
