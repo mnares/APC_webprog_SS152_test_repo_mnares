@@ -24,10 +24,10 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+    
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
 
 </head>
 
@@ -105,7 +105,18 @@
                 <p>Hi! My name is Marc Anthony Nares but you can just call me either Marc or Mac. In the 17 years of my existence, I'm fond of playing different kinds of sport as well as video games. When I'm alone, travelling is my only option. Another good thing about me is that I eat a lot. I want to try different cuisines while jamming to my favorite songs in order to satisfy my daily cravings.
                 In the near future, I would like to learn the art of photography because it's my way of keeping my experiences and memories with me as I grow old. Lastly, playing any musical instrument is one of my life goals because it can serve as one of my growing talents that I can showcase to everyone.
 
-                
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/Markkyy08" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mnares/APC_webprog_SS152_test_repo_mnares" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/iloveshoes41" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </section>
@@ -186,21 +197,39 @@
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
+                <h2>C.R.U.D</h2>
+                <div>
+                    <table border="2">
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Nickname</th>
+                            <th>Email Address</th>
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>Phone No.</th>
+                            <th>Comment</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        <?php foreach ($user as $usr) : ?>
+                            <tr>
+                                <td><?=  $usr->fullname ?></td>
+                                <td><?=  $usr->nickname ?></td>
+                                <td><?=  $usr->email ?></td>
+                                <td><?=  $usr->address ?></td>
+                                <td><?=  $usr->gender ?></td>
+                                <td><?=  $usr->phoneNum ?></td>
+                                <td><?=  $usr->comment ?></td>
+                                <td><?=  anchor('Users/edit/'.$usr->user_id,'Edit',['role'=>'button']) ?></td>
+                                <td><?=  anchor('Users/delete/'.$usr->user_id,'Delete',['role'=>'button','onclick'=>'return confirm(\'Are you sure? \')']) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                    <br/>
+                    <?=  anchor('Users/index/','Create new user',['role'=>'button']) ?>
+                    <br/>
+
+                </div>
             </div>
         </div>
     </section>
@@ -209,7 +238,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
+            <p>Copyright &copy; Marc Anthony Nares 2016</p>
         </div>
     </footer>
 
