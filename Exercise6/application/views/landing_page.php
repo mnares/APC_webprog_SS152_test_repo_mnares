@@ -60,7 +60,7 @@
                         <a class="page-scroll" href="#download">Trivia</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">C.R.U.D</a>
                     </li>
                     <!--<li>
                         <a class="page-scroll" href="<?php echo base_url(); index.php/signup?> ">Sign-Up</a>
@@ -115,11 +115,34 @@
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                    <h2>Trivia</h2>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What's my favorite food?</a>
+                                </h4>
+                              </div>
+                              <div id="collapse1" class="panel-collapse collapse">
+                                <div class="panel-body">Sinigang</div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">What's my favorite food?</a>
+                                </h4>
+                              </div>
+                              <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">Sinigang</div>
+                              </div>
+                            </div>
+                        </div>
                 </div>
             </div>
+
         </div>
     </section>
 
