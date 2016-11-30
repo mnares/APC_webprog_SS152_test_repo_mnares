@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Hello</h1>
+                        <h1 class="brand-heading">Welcome</h1>
                         <p class="intro-text"><i>“Hard work beats talent when talent fails to work hard.”</i>
                             <br>- Kevin Durant</p>
                         <a href="#about" class="btn btn-circle page-scroll">
@@ -132,11 +132,47 @@
                             <div class="panel panel-default">
                               <div class="panel-heading">
                                 <h4 class="panel-title">
-                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">What's my favorite food?</a>
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Where was I born?</a>
                                 </h4>
                               </div>
                               <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body">Sinigang</div>
+                                <div class="panel-body">Japan</div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Favorite Song?</a>
+                                </h4>
+                              </div>
+                              <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">Go Flex</div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Favorite Sport?</a>
+                                </h4>
+                              </div>
+                              <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">Basketball</div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Favorite Color?</a>
+                                </h4>
+                              </div>
+                              <div id="collapse5" class="panel-collapse collapse">
+                                <div class="panel-body">Pink</div>
                               </div>
                             </div>
                         </div>
