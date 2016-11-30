@@ -18,7 +18,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
-        $this->form_validation->set_rules('phoneNum', 'Phone Number', 'required');
+        $this->form_validation->set_rules('phoneNum', 'Phone No.', 'required');
         $this->form_validation->set_rules('comment', 'Comment');
 
         // submit
@@ -62,7 +62,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
         $this->form_validation->set_rules('address', 'Address', 'required');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
-        $this->form_validation->set_rules('phoneNum', 'Phone Number', 'required');
+        $this->form_validation->set_rules('phoneNum', 'Phone No.', 'required');
         $this->form_validation->set_rules('comment', 'Comment');
 
 
