@@ -24,5 +24,11 @@ class User_model extends CI_Model
             } //end if num_rows
     }
     
+    //update
+    function edit($id, $data_users)
+    {
+        return $this->db->where('user_id',$id)
+                ->update('users',$data_users);
+    }
     
 }?>
