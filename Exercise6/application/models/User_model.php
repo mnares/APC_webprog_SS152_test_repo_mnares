@@ -45,4 +45,11 @@ class User_model extends CI_Model
         }//end if code->num_rows > 0 
                 
     }//end function find
+
+    //delete
+    function delete($id)
+    {
+        return $this->db->where('user_id',$id)
+                ->delete('users');
+    }
 }?>
