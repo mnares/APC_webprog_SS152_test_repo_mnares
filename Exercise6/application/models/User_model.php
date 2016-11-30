@@ -31,4 +31,18 @@ class User_model extends CI_Model
                 ->update('users',$data_users);
     }
     
+
+    function find($id) //this is for find record id->product
+    { 
+        $code = $this->db->where('user_id',$id)
+                        ->limit(1)
+                        ->get('users');
+        if ($code->num_rows() > 0 )
+        {
+            return $code->row();
+        }else {
+            return array();
+        }//end if code->num_rows > 0 
+                
+    }//end function find
 }?>
