@@ -10,7 +10,7 @@ class User_model extends CI_Model
     // create
     function insert_user($data_users)
     {
-        return $this->db->insert('user', $data_users);
+        return $this->db->insert('users', $data_users);
     }
     
 }?>
