@@ -34,9 +34,9 @@ class Users extends CI_Controller
                 'fullname' => $this->input->post('fullname'),
                 'nickname' => $this->input->post('nickname'),
                 'email' => $this->input->post('email'),
-                'address' => $this->input->post('address')
-                'gender' => $this->input->post('gender')
-                'phoneNum' => $this->input->post('phoneNum')
+                'address' => $this->input->post('address'),
+                'gender' => $this->input->post('gender'),
+                'phoneNum' => $this->input->post('phoneNum'),
                 'comment' => $this->input->post('comment')
 
 
@@ -55,7 +55,7 @@ class Users extends CI_Controller
         }
     }
 
-    function edit($id)
+    function edit($user_id)
     {
         $this->form_validation->set_rules('fullname', 'Full Name', 'required');
         $this->form_validation->set_rules('nickname', 'Nickname', 'required');
@@ -69,7 +69,7 @@ class Users extends CI_Controller
         // submit
         if ($this->form_validation->run() == FALSE)
         {
-            $data['user'] = $this->User_model->find($id);
+            $data['user'] = $this->User_model->find($user_id);
             $this->load->view('update_user_view',$data);
         }
         else
@@ -81,9 +81,9 @@ class Users extends CI_Controller
                 'fullname' => $this->input->post('fullname'),
                 'nickname' => $this->input->post('nickname'),
                 'email' => $this->input->post('email'),
-                'address' => $this->input->post('address')
-                'gender' => $this->input->post('gender')
-                'phoneNum' => $this->input->post('phoneNum')
+                'address' => $this->input->post('address'),
+                'gender' => $this->input->post('gender'),
+                'phoneNum' => $this->input->post('phoneNum'),
                 'comment' => $this->input->post('comment')
                 );
 
@@ -103,13 +103,13 @@ class Users extends CI_Controller
                 'fullname' => $this->input->post('fullname'),
                 'nickname' => $this->input->post('nickname'),
                 'email' => $this->input->post('email'),
-                'address' => $this->input->post('address')
-                'gender' => $this->input->post('gender')
-                'phoneNum' => $this->input->post('phoneNum')
+                'address' => $this->input->post('address'),
+                'gender' => $this->input->post('gender'),
+                'phoneNum' => $this->input->post('phoneNum'),
                 'comment' => $this->input->post('comment')
                 );
 
-                if ($this->User_model->edit($id, $data_users))
+                if ($this->User_model->edit($user_id, $data_users))
                 {
                     redirect('home', $data);
                 }
@@ -123,9 +123,9 @@ class Users extends CI_Controller
         
         }
     }
-    function delete($id)
+    function delete($user_id)
     {
-        $this->User_model->delete($id);
+        $this->User_model->delete($user_id);
         redirect('home');
     }
 }

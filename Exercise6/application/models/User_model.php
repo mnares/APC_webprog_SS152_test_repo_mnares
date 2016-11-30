@@ -25,16 +25,16 @@ class User_model extends CI_Model
     }
     
     //update
-    function edit($id, $data_users)
+    function edit($user_id, $data_users)
     {
-        return $this->db->where('user_id',$id)
+        return $this->db->where('user_id',$user_id)
                 ->update('users',$data_users);
     }
     
 
-    function find($id) //this is for find record id->product
+    function find($user_id) //this is for find record id->product
     { 
-        $code = $this->db->where('user_id',$id)
+        $code = $this->db->where('user_id',$user_id)
                         ->limit(1)
                         ->get('users');
         if ($code->num_rows() > 0 )
@@ -47,9 +47,9 @@ class User_model extends CI_Model
     }//end function find
 
     //delete
-    function delete($id)
+    function delete($user_id)
     {
-        return $this->db->where('user_id',$id)
+        return $this->db->where('user_id',$user_id)
                 ->delete('users');
     }
 }?>
