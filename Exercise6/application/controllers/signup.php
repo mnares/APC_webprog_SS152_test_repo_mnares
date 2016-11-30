@@ -1,3 +1,4 @@
+
 <?php
 class Home extends CI_Controller
 {
@@ -13,15 +14,9 @@ class Home extends CI_Controller
  function index()
  {
   $data['user'] = $this->User_model->all_users();
-  $this->load->view('landing_page', $data);
- }
-
- function signup()
- {
-  $data['user'] = $this->User_model->all_users();
   $this->load->view('home_view', $data);
  }
 
-
+ 
 }
 ?>
