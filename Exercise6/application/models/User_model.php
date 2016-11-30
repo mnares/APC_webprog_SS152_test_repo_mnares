@@ -12,5 +12,17 @@ class User_model extends CI_Model
     {
         return $this->db->insert('users', $data_users);
     }
+
+    //retrieve
+    function all_users()
+    {
+        $show = $this->db->get('users');
+            if($show->num_rows() > 0 ) {
+                    return $show->result();
+            } else {
+                     return array();
+            } //end if num_rows
+    }
+    
     
 }?>
